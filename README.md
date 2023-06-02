@@ -1,6 +1,6 @@
-# `template-next-js`
+# Full Stack Spotify Clone (Code with Antonio)
 
-Template for Next.js Apps
+https://www.youtube.com/watch?v=2aeMRB8LL4o
 
 #
 
