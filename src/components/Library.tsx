@@ -1,11 +1,21 @@
 "use client";
 
+import useUploadModal from "@/hooks/useUploadModal";
 import { AiOutlinePlus } from "react-icons/ai";
 import { TbPlaylist } from "react-icons/tb";
+import useAuthModal from "../hooks/useAuthModal";
+import { useUser } from "../hooks/useUser";
 
 export default function Library() {
+  const { onOpen: onOpenAuth } = useAuthModal();
+  const { onOpen: onOpenUpload } = useUploadModal();
+  const { user } = useUser();
   const onClick = () => {
-    //handle upload
+    if (!user) {
+      return onOpenAuth();
+    }
+    // todo : check for sub
+    return onOpenUpload();
   };
   return (
     <div className="flex flex-col">

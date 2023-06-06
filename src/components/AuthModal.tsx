@@ -15,7 +15,7 @@ export default function AuthModal() {
   const supabaseClient = useSupabaseClient();
   const router = useRouter();
   const { session } = useSessionContext();
-  const { onClose, isOpen } = useAuthModal();
+  const { isOpen, onClose } = useAuthModal();
 
   useEffect(() => {
     if (session) {
@@ -24,11 +24,11 @@ export default function AuthModal() {
     }
   }, [session, router, onClose]);
 
-  function onChange(open: boolean) {
+  const onChange = (open: boolean) => {
     if (!open) {
       onClose();
     }
-  }
+  };
 
   return (
     <Modal
