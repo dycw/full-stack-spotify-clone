@@ -10,19 +10,19 @@ const Button = forwardRef<HTMLButtonElement, Props>(
         type={type}
         className={twMerge(
           `
-            bg-green-500
+            w-full
+            rounded-full
             border
             border-transparent
-            disabled:cursor-not-allowed
-            disabled:opacity-50
-            font-bold
-            hover:opacity-75
+            bg-green-500
             px-3
             py-3
-            rounded-full
+            font-bold
             text-black
             transition
-            w-full
+            hover:opacity-75
+            disabled:cursor-not-allowed
+            disabled:opacity-50
           `,
           className
         )}

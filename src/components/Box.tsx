@@ -10,10 +10,10 @@ export default function Box({ children, className }: Props) {
     <div
       className={twMerge(
         `
-          bg-neutral-900
           h-fit
-          rounded-lg
           w-full
+          rounded-lg
+          bg-neutral-900
         `,
         className
       )}
