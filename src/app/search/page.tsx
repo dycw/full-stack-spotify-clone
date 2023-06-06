@@ -9,6 +9,8 @@ type Props = {
   };
 };
 
+export const revalidate = 0;
+
 export default async function Search({ searchParams: { title } }: Props) {
   const songs = await getSongsByTitle(title);
   return (
