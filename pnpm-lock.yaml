@@ -17,6 +17,12 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  react-icons:
+    specifier: ^4.9.0
+    version: 4.9.0(react@18.2.0)
+  tailwind-merge:
+    specifier: ^1.13.0
+    version: 1.13.0
 
 devDependencies:
   "@tailwindcss/aspect-ratio":
@@ -3257,6 +3263,17 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-icons@4.9.0(react@18.2.0):
+    resolution:
+      {
+        integrity: sha512-ijUnFr//ycebOqujtqtV9PFS7JjhWg0QU6ykURVHuL4cbofvRCf3f6GMn9+fBktEFQOIVZnuAYLZdiyadRQRFg==,
+      }
+    peerDependencies:
+      react: "*"
+    dependencies:
+      react: 18.2.0
+    dev: false
+
   /react-is@16.13.1:
     resolution:
       {
@@ -3661,6 +3678,13 @@ packages:
       "@pkgr/utils": 2.4.1
       tslib: 2.5.2
     dev: true
+
+  /tailwind-merge@1.13.0:
+    resolution:
+      {
+        integrity: sha512-mUTmDbcU+IhOvJ0c42eLQ/nRkvolTqfpVaVQRSxfJAv9TabS6Y2zW/1wKpKLdKzyL3Gh8j6NTLl6MWNmvOM6kA==,
+      }
+    dev: false
 
   /tailwindcss@3.3.2:
     resolution:
