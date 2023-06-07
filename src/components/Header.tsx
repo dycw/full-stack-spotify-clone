@@ -1,6 +1,5 @@
 "use client";
 
-import useAuthModal from "@/hooks/useAuthModal";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
@@ -9,6 +8,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { HiHome } from "react-icons/hi";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
+import useAuthModal from "../hooks/useAuthModal";
 import { useUser } from "../hooks/useUser";
 import Button from "./Button";
 
