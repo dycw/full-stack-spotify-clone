@@ -19,19 +19,20 @@ type Props = {
 export default function Sidebar({ children, songs }: Props) {
   const pathname = usePathname();
   const { activeId } = usePlayer();
+
   const routes = useMemo(
     () => [
       {
         icon: HiHome,
         label: "Home",
-        active: pathname !== "/search",
+        active: pathname === "/",
         href: "/",
       },
       {
         icon: BiSearch,
         label: "Search",
         active: pathname === "/search",
-        href: "/",
+        href: "/search",
       },
     ],
     [pathname]
