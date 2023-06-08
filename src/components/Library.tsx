@@ -1,5 +1,6 @@
 "use client";
 
+import useSubscribeModal from "@/hooks/useSubscribeModal";
 import { AiOutlinePlus } from "react-icons/ai";
 import { TbPlaylist } from "react-icons/tb";
 import useAuthModal from "../hooks/useAuthModal";
@@ -15,14 +16,17 @@ type Props = {
 
 export default function Library({ songs }: Props) {
   const { onOpen: onOpenAuth } = useAuthModal();
-  const { onOpen: onOpenUpload } = useUploadModal();
   const onPlay = useOnPlay(songs);
-  const { user } = useUser();
+  const { onOpen: onOpenUpload } = useUploadModal();
+  const { onOpen: onOpenSubscribe } = useSubscribeModal();
+  const { user, subscription } = useUser();
   const onClick = () => {
     if (!user) {
       return onOpenAuth();
     }
-    // todo : check for sub
+    if (!subscription) {
+      return onOpenSubscribe();
+    }
     return onOpenUpload();
   };
   return (
