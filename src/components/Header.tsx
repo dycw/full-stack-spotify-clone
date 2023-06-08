@@ -9,6 +9,7 @@ import { HiHome } from "react-icons/hi";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { twMerge } from "tailwind-merge";
 import useAuthModal from "../hooks/useAuthModal";
+import usePlayer from "../hooks/usePlayer";
 import { useUser } from "../hooks/useUser";
 import Button from "./Button";
 
@@ -19,12 +20,13 @@ type Props = {
 
 export default function Header({ children, className }: Props) {
   const { onOpen } = useAuthModal();
+  const player = usePlayer();
   const router = useRouter();
   const supabaseClient = useSupabaseClient();
   const { user } = useUser();
   const handleLogout = async () => {
     const { error } = await supabaseClient.auth.signOut();
-    // reset any playing songs
+    player.reset();
     router.refresh();
     if (error) {
       toast.error(error.message);

@@ -2,9 +2,15 @@
 
 import { useEffect, useState } from "react";
 import AuthModal from "../components/AuthModal";
+import SubscribeModal from "../components/SubscribeModal";
 import UploadModal from "../components/UploadModal";
+import { ProductWithPrice } from "../types";
 
-export default function ModalProvider() {
+type Props = {
+  products: ProductWithPrice[];
+};
+
+export default function ModalProvider({ products }: Props) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -19,6 +25,7 @@ export default function ModalProvider() {
     <>
       <AuthModal />
       <UploadModal />
+      <SubscribeModal products={products} />
     </>
   );
 }
